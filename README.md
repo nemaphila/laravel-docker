@@ -50,8 +50,7 @@ cp .env.sample .env
 コンテナを起動し、app コンテナに入る。
 
 ```shell
-docker-compose build --no-cache
-docker-compose up -d && docker-compose exec app bash
+docker-compose up -d --build && docker-compose exec app bash
 ```
 
 Laravel をインストールする。
@@ -86,17 +85,17 @@ DB_PORT=3306
 ++ DB_PASSWORD=任意のデータベースのパスワード
 ```
 
-コンテナを再起動し、app コンテナに入る。
-
-```shell
-docker-compose restart && docker-compose exec app bash
-```
-
 マイグレーションを実行する。
 
 ```shell
 cd 任意のアプリケーション名
-php artisan migrate
+php artisan config:clear && php artisan migrate
+```
+
+コンテナを再起動し、app コンテナに入る。
+
+```shell
+docker-compose restart
 ```
 
 [localhost:8000](http://localhost:8000/) で動作することを確認する。
