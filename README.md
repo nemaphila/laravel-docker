@@ -20,7 +20,7 @@ Laravel の開発環境を Docker で構築する。
 Laravel Docker のリポジトリを取得する。
 
 ```shell
-git https://github.com/nemaphila/laravel-docker
+git clone https://github.com/nemaphila/laravel-docker
 ```
 
 ディレクトリ名を任意のアプリケーション名に変更する。
