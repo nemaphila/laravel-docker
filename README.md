@@ -43,13 +43,14 @@ cp .env.sample .env
 ++ DB_NAME = 任意のデータベース名
 -- DB_USER = db_user_name
 ++ DB_USER = 任意のデータベースのユーザー名
--- DB_PASSWORD: db_password
-++ DB_PASSWORD: 任意のデータベースのパスワード
+-- DB_PASSWORD = db_password
+++ DB_PASSWORD = 任意のデータベースのパスワード
 ```
 
 コンテナを起動し、app コンテナに入る。
 
 ```shell
+docker-compose build --no-cache
 docker-compose up -d && docker-compose exec app bash
 ```
 
