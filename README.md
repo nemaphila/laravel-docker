@@ -92,7 +92,7 @@ cd 任意のアプリケーション名
 php artisan config:clear && php artisan migrate
 ```
 
-コンテナを再起動し、app コンテナに入る。
+コンテナを再起動する。
 
 ```shell
 docker-compose restart
