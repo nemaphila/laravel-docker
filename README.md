@@ -30,6 +30,23 @@ mv laravel-docker 任意のアプリケーション名
 cd 任意のアプリケーション名
 ```
 
+.env ファイルを作成する。
+
+```shell
+cp .env.sample .env
+```
+
+.env を開き、データベース情報を編集する。
+
+```diff
+-- DB_NAME = db_name
+++ DB_NAME = 任意のデータベース名
+-- DB_USER = db_user_name
+++ DB_USER = 任意のデータベースのユーザー名
+-- DB_PASSWORD: db_password
+++ DB_PASSWORD: 任意のデータベースのパスワード
+```
+
 コンテナを起動し、app コンテナに入る。
 
 ```shell
@@ -82,3 +99,9 @@ php artisan migrate
 ```
 
 [localhost:8000](http://localhost:8000/) で動作することを確認する。
+
+## 参考記事
+
+- [Laravelの環境をDockerで構築するチュートリアル](https://tech.windii.jp/backend/laravel/laravel-with-docker-compose)
+- [M1 Macでno matching manifest for linux/arm64/v8が発生した](https://ryotarch.com/docker/no-matching-manifest-for-linux-arm64-v8-on-m1-mac/)
+
